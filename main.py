@@ -13,24 +13,24 @@ def menu():
     print("6. Salir")
 
 def main():
-    while True:
-        menu()
-        opcion = int(input("Selecciona una opción : "))
-        match opcion:
-            case 1:  #Listar videojuegos
-                imprimir_lista_numerada(lista_videojuegos)
-            case 2:  #Buscar videojuegos
-                buscar_videojuego(lista_tuplas_videojuegos)
-            case 3:  #Añadir videojuegos
-                añadir_videojuego_final(lista_videojuegos)
-            case 4:  #Eliminar videojuegos
-                eliminar_videojuego(lista_videojuegos)
-            case 5:  #Mostrar videojuegos
-                generos()
-            case 6:  #Salir
-                print("FIN")
-            case _:
-                print("Opción no válida")
+    menu()
+    opcion = int(input("Selecciona una opción : "))
+    match opcion:
+        case 1:  #Listar videojuegos
+            imprimir_lista_numerada(lista_videojuegos)
+        case 2:  #Buscar videojuegos
+            buscar_videojuego(lista_tuplas_videojuegos)
+        case 3:  #Añadir videojuegos
+            añadir_videojuego_final(lista_videojuegos)
+        case 4:  #Eliminar videojuegos
+            eliminar_videojuego(lista_videojuegos)
+        case 5:  #Mostrar videojuegos
+            generos()
+        case 6:  #Salir
+            print("FIN")
+        case _:
+            print("Opción no válida")
+            main()
             
 
 if __name__ == "__main__":
