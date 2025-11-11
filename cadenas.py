@@ -13,12 +13,13 @@ def imprimir(tupla):
     print("Titulo: " + tupla[0] + " | Genero: " + tupla[1] + " | Año: " + tupla[2])
 
 
-nombre = input("Introduce el nombre de un videojuego: ")
-encontrado = False
-for x in lista:
-    if nombre.lower().replace(" ", "") == x[0].lower().replace(" ", ""):
-        imprimir(x)
-        encontrado = True
+def buscar_videojuego(lista):
+    nombre_videojuego = input("Introduce el nombre de un videojuego: ")
+    encontrado = False
+    for x in lista:
+        if nombre_videojuego.lower().replace(" ", "") == x[0].lower().replace(" ", ""):
+            imprimir(x)
+            encontrado = True
 
-if not encontrado:
-    print("ERROR 404: Not Found")
+    if not encontrado:
+        print("ERROR 404: Not Found")
