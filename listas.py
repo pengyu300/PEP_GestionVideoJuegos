@@ -8,22 +8,56 @@ Crea una lista con los títulos de tus 5 videojuegos favoritos.
 """
 
 
-def imprimir(lista):
+def añadir_videojuego_final(lista):
+    nombre_videojuego = input(
+        "Introduce el nombre de un videojuego que quieras añadir: "
+    )
+    lista.append(nombre_videojuego)
+    return lista
+
+
+def añadir_videojuego_posicion(lista):
+    posicion = int(
+        input("Indroduce la posicion en la que quieres insertar el videojuego: ")
+    )
+    nombre_videojuego = input(
+        "Introduce el nombre de un videojuego que quieras añadir en la posicion "
+        + posicion
+        + " : "
+    )
+    lista[posicion](nombre_videojuego)
+    return lista
+
+
+def eliminar_videojuego(lista):
+    nombre_videojuego = input(
+        "Introduce el nombre del videojuego que quieres eliminar: "
+    )
+    encontrado = False
+    for x in lista:
+        if nombre_videojuego.lower().replace(" ", "") == x.lower().replace(" ", ""):
+            lista.remove(x)
+            encontrado = True
+    if not encontrado:
+        print("ERROR 404: Not Found")
+    return lista
+
+
+def imprimir_lista_numerada(lista):
     for x in range(0, len(lista)):
         print(str(x + 1) + ". " + lista[x])
 
 
-lista1 = [
+def imprimir_lista_ordenada(lista):
+    lista.sort()
+    for x in lista:
+        print(x)
+
+
+lista_videojuegos = [
     "The Legend of Zelda: Tears of the Kingdom",
     "Hollow Knight: Silksong",
     "Celeste",
     "Clair Obscur: Expedition 33",
     "ELDEN RING",
 ]
-lista1.append("Hades")
-lista1[4] = "Cult of the Lamb"
-lista1.remove("Cult of the Lamb")
-
-imprimir(lista1)
-print("\n")
-imprimir(sorted(lista1))
