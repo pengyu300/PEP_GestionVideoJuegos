@@ -7,7 +7,7 @@ género).
 """
 
 
-def imprimir(lista):
+def imprimir_tuplas(lista):
     for x in lista:
         print(x[0] + " (" + x[1] + ") " + x[2])
 
@@ -18,5 +18,4 @@ tupla3 = ("Celeste", "2018", "Plataformas")
 tupla4 = ("Clair Obscur: Expedition 33", "2025", "Rol")
 tupla5 = ("ELDEN RING", "2022", "Rol de acción y aventura")
 
-lista = [tupla1, tupla2, tupla3, tupla4, tupla5]
-imprimir(lista)
+lista_tuplas_videojuegos = [tupla1, tupla2, tupla3, tupla4, tupla5]
