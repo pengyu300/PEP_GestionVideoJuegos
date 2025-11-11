@@ -1,4 +1,8 @@
+from listas import lista_videojuegos, imprimir_lista_numerada, añadir_videojuego_final, eliminar_videojuego
+from tuplas import lista_tuplas_videojuegos
+from cadenas import buscar_videojuego
 from conjuntos import generos
+
 def menu():
     print("GESTIÓN DE VIDEOJUEGOS")
     print("1. Listar videojuegos")
@@ -8,20 +12,26 @@ def menu():
     print("5. Mostrar videojuegos")
     print("6. Salir")
 
-def elegir():
+def main():
     while True:
         menu()
-        opcion = input("Selecciona una opción : ")
-
-        if opcion == "1":
-            print("LISTARIAMOS LOS VIDEOJUEGOS")
-        elif opcion == "5":
-            generos()
-        elif opcion == "6":
-            print("FIN")
-            break
-        else:
-            print("Opción no válida")
+        opcion = int(input("Selecciona una opción : "))
+        match opcion:
+            case 1:  #Listar videojuegos
+                imprimir_lista_numerada(lista_videojuegos)
+            case 2:  #Buscar videojuegos
+                buscar_videojuego(lista_tuplas_videojuegos)
+            case 3:  #Añadir videojuegos
+                añadir_videojuego_final(lista_videojuegos)
+            case 4:  #Eliminar videojuegos
+                eliminar_videojuego(lista_videojuegos)
+            case 5:  #Mostrar videojuegos
+                generos()
+            case 6:  #Salir
+                print("FIN")
+            case _:
+                print("Opción no válida")
+            
 
 if __name__ == "__main__":
-    elegir()
+    main()
