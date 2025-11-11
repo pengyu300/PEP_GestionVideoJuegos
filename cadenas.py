@@ -6,19 +6,19 @@ Pide al usuario que escriba el nombre de un videojuego.
  Practica métodos de cadenas (.lower(), .upper(), .replace(), `.split()). .
 """
 
-from tuplas import lista
+from tuplas import lista_tuplas_videojuegos
 
 
-def imprimir(tupla):
+def imprimir_conincidencia(tupla):
     print("Titulo: " + tupla[0] + " | Genero: " + tupla[1] + " | Año: " + tupla[2])
 
 
-def buscar_videojuego(lista):
+def buscar_videojuego():
     nombre_videojuego = input("Introduce el nombre de un videojuego: ")
     encontrado = False
-    for x in lista:
+    for x in lista_tuplas_videojuegos:
         if nombre_videojuego.lower().replace(" ", "") == x[0].lower().replace(" ", ""):
-            imprimir(x)
+            imprimir_conincidencia(x)
             encontrado = True
 
     if not encontrado:
