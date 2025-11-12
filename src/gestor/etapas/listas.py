@@ -1,10 +1,10 @@
 """
 Crea una lista con los títulos de tus 5 videojuegos favoritos.
- Añade nuevas videojuegos al final de la lista.
- Inserta un videojuego en una posición específica.
- Elimina un videojuego de la lista.
- Recorre la lista e imprime los títulos numerados.
- Muestra la lista ordenada alfabéticamente.
+Añade nuevas videojuegos al final de la lista.
+Inserta un videojuego en una posición específica.
+Elimina un videojuego de la lista.
+Recorre la lista e imprime los títulos numerados.
+Muestra la lista ordenada alfabéticamente.
 """
 def añadir_videojuego_final(lista):
     nombre_videojuego = input(
