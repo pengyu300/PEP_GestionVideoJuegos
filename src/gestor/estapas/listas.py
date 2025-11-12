@@ -17,15 +17,22 @@ def añadir_videojuego_final(lista):
 
 
 def añadir_videojuego_posicion(lista):
-    posicion = int(
-        input("Indroduce la posicion en la que quieres insertar el videojuego: ")
-    )
-    nombre_videojuego = input(
-        "Introduce el nombre de un videojuego que quieras añadir en la posicion "
-        + posicion
-        + " : "
-    )
-    lista[posicion](nombre_videojuego)
+    try:
+        posicion = int(
+            input("Introduce la posición en la que quieres insertar el videojuego: ")
+        )
+        nombre_videojuego = input(
+            "Introduce el nombre de un videojuego que quieras añadir en la posición "
+            + str(posicion)
+            + ": "
+        )
+        if 0 <= posicion <= len(lista):
+            lista.insert(posicion, nombre_videojuego)
+        else:
+            print("Posición no válida. Se añadirá al final.")
+            lista.append(nombre_videojuego)
+    except ValueError:
+        print("Error: La posición debe ser un número entero.")
     return lista
 
 
@@ -38,6 +45,7 @@ def eliminar_videojuego(lista):
         if nombre_videojuego.lower().replace(" ", "") == x.lower().replace(" ", ""):
             lista.remove(x)
             encontrado = True
+            break
     if not encontrado:
         print("ERROR 404: Not Found")
     return lista
