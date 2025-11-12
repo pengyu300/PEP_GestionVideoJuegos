@@ -10,6 +10,7 @@ main.
 - Dev C (Qixian Guan): etapa 4 y 6
 
 ### Cómo ejecutar el programa:
+Ejecutar el programa principal: python main.py
 
 
 
