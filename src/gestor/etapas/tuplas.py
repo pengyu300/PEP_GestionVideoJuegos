@@ -9,7 +9,7 @@ género).
 
 def imprimir_tuplas(lista):
     for x in lista:
-        print(x[0] + " (" + x[1] + ") " + x[2])
+        print(f"{x[0]} ({x[1]}) {x[2]}")
 
 
 tupla1 = ("The Legend of Zelda: Tears of the Kingdom", "2023", "Acción y aventura")
