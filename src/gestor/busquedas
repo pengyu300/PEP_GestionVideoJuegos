@@ -1,0 +1,36 @@
+"""
+Módulo: busquedas.py
+Contiene funciones para buscar y filtrar videojuegos por diferentes criterios.
+"""
+from catalogo import leer_videojuego
+def buscar_titulo(diccionario, titulo):
+    """Búsqueda exacta por título."""
+    leer_videojuego(diccionario, titulo)
+def buscar_parcial(diccionario, fragmento):
+    """Búsqueda parcial: muestra videojuegos cuyo título contiene el fragmento."""
+    encontrado = False
+    for vj in diccionario.values():
+        if fragmento.lower() in vj["titulo"].lower():
+            print(f"Título: {vj['titulo']} | Año: {vj['anio']} | Género: {', '.join(vj['genero'])}")
+            encontrado = True
+    if not encontrado:
+        print("No se encontraron coincidencias con ese fragmento.")
+def buscar_genero(diccionario, genero):
+    """Búsqueda por género."""
+    encontrado = False
+    for vj in diccionario.values():
+        for g in vj["genero"]:
+            if genero.lower() == g.lower():
+                print(f"Título: {vj['titulo']} | Año: {vj['anio']} | Género: {', '.join(vj['genero'])}")
+                encontrado = True
+    if not encontrado:
+        print("No se encontraron videojuegos con ese género.")
+def buscar_anio(diccionario, fecha_inicio, fecha_fin):
+    """Búsqueda de videojuegos dentro de un rango de años."""
+    encontrado = False
+    for vj in diccionario.values():
+        if fecha_inicio <= vj["anio"] <= fecha_fin:
+            print(f"Título: {vj['titulo']} | Año: {vj['anio']} | Género: {', '.join(vj['genero'])}")
+            encontrado = True
+    if not encontrado:
+        print("No se encontraron videojuegos publicados en esas fechas.")

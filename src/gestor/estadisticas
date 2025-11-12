@@ -1,0 +1,14 @@
+"""
+Módulo: estadisticas.py
+Contiene funciones para calcular estadísticas sobre el catálogo de videojuegos.
+"""
+def total_videojuegos(diccionario):
+    """Devuelve el número total de videojuegos en el catálogo."""
+    return len(diccionario)
+def conteo_por_genero(diccionario):
+    """Devuelve un conteo de cuántos videojuegos hay por género."""
+    conteo = {}
+    for vj in diccionario.values():
+        for g in vj["genero"]:
+            conteo[g] = conteo.get(g, 0) + 1
+    return conteo
